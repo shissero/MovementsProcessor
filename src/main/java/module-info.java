@@ -4,6 +4,7 @@ module com.example.vamojossa {
 
         requires org.controlsfx.controls;
         requires com.dlsc.formsfx;
+        requires org.apache.logging.log4j;
 
         opens com.example.vamojossa to javafx.fxml;
         exports com.example.vamojossa;

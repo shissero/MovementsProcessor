@@ -2,13 +2,17 @@ package com.example.vamojossa;
 
 import com.example.vamojossa.models.NubankMovement;
 import com.example.vamojossa.presenters.TableDataPresenter;
+import com.example.vamojossa.utils.LoggerManager;
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
 import java.io.IOException;
 
 public class Main extends Application {
@@ -35,6 +39,10 @@ public class Main extends Application {
 
         public static void main(String[] args) {
 
-                launch();
+                LoggerManager.error("Testing ingo logging");
+
+                Platform.exit();
+
+                //launch();
         }
 }
