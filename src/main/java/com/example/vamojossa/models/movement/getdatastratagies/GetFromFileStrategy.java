@@ -1,6 +1,5 @@
 package com.example.vamojossa.models.movement.getdatastratagies;
 
-import com.example.vamojossa.models.movement.Movement;
 import com.example.vamojossa.models.movement.MovementBuilder;
 import com.example.vamojossa.utils.FileHandling;
 import com.example.vamojossa.utils.LoggerManager;
@@ -8,7 +7,6 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 import java.io.IOException;
-import java.nio.file.Files;
 import java.util.List;
 
 /**
