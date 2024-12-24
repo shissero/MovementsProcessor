@@ -8,9 +8,7 @@ module com.example.vamojossa {
 
         opens com.example.vamojossa to javafx.fxml;
         exports com.example.vamojossa;
-        exports com.example.vamojossa.models;
         exports com.example.vamojossa.views;
-        opens com.example.vamojossa.models to javafx.fxml;
         opens com.example.vamojossa.views to javafx.fxml ;
         exports com.example.vamojossa.presenters;
         opens com.example.vamojossa.presenters to javafx.fxml;
@@ -18,4 +16,8 @@ module com.example.vamojossa {
         opens com.example.vamojossa.utils to javafx.fxml;
         exports com.example.vamojossa.controllers;
         opens com.example.vamojossa.controllers to javafx.fxml;
+        exports com.example.vamojossa.models.movement.getdatastratagies;
+        opens com.example.vamojossa.models.movement.getdatastratagies to javafx.fxml;
+        exports com.example.vamojossa.models.movement;
+        opens com.example.vamojossa.models.movement to javafx.fxml;
 }

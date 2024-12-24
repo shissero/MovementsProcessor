@@ -12,6 +12,30 @@ import java.util.stream.Stream;
 
 public class FileHandling {
 
+    /**
+     *
+     * @param path:
+     * @return list of absolute paths for all files in the directory specified by @path
+     * @throws IOException
+     */
+    public static List<String> getFilesDir(String path) throws IOException {
+
+
+        // Using Files.list() is better for handling large directories
+        try (Stream<Path> stream = Files.list(Paths.get(path))) {
+
+            return stream
+                    .filter(file -> !Files.isDirectory(file))
+                    .map(p -> path + "/" + p.getFileName().toString())
+                    .collect(Collectors.toList());
+        }
+    }
+
+    public static boolean isDirectory(String path) {
+
+        return Files.isDirectory(Paths.get(path));
+    }
+
     public static List<String> openFile(String path) throws IOException{
 
         BufferedReader reader = new BufferedReader(new FileReader(path));
@@ -21,17 +45,5 @@ public class FileHandling {
         reader.close();
 
         return aux;
-    }
-
-    // Returns null if any error occurs
-    public static List<String> getFilesDir(String path) throws IOException {
-
-        try (Stream<Path> stream = Files.list(Paths.get(path))) {
-
-            return stream
-                    .filter(file -> !Files.isDirectory(file))
-                    .map(p -> path + "/" + p.getFileName().toString())
-                    .collect(Collectors.toList());
-        }
     }
 }
