@@ -5,15 +5,18 @@ import org.apache.logging.log4j.Logger;
 
 public class LoggerManager {
 
-        private static final Logger logger = LogManager.getLogger();
+        private static final Logger ERROR_LOGGER = LogManager.getRootLogger();
+        private static final Logger INFO_LOGGER = LogManager.getLogger("info_logger");
 
         public static void info(String message) {
 
-                logger.info(message);
+                INFO_LOGGER.info(message);
         }
 
         public static void error(String message) {
 
-                logger.error(message);
+                ERROR_LOGGER.error(message);
         }
+
+        public static void placeholder(){}
 }

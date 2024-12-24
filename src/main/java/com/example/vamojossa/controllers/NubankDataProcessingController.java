@@ -1,6 +1,6 @@
 package com.example.vamojossa.controllers;
 
-import com.example.vamojossa.models.Movement;
+import com.example.vamojossa.models.movement.Movement;
 import javafx.scene.control.TableView;
 
 public class NubankDataProcessingController {
