@@ -1,12 +1,7 @@
 package com.example.vamojossa;
 
-import com.example.vamojossa.models.movement.getdatastratagies.NubankCSVStrategy;
-import com.example.vamojossa.presenters.TableDataPresenter;
-import com.example.vamojossa.utils.LoggerManager;
 import javafx.application.Application;
 import javafx.application.Platform;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
