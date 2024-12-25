@@ -44,9 +44,6 @@ public abstract class GetFromFileStrategy {
          * @param path: directory to search for files with movement data
          * @return observable list of MovementBuilder objects containing read data
          */
-
-
-        // TODO: this method should be in GetFomFileStrategy class
         protected ObservableList<MovementBuilder> getFromDirectory(String path){
 
                 ObservableList<MovementBuilder> all_movements = FXCollections.observableArrayList();

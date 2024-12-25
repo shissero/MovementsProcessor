@@ -11,17 +11,24 @@ public class TableDataPresenter {
         private final TableDataDisplayer view;
 
 
-        public TableDataPresenter(ObservableList<TableDataAdapter> data, TableDataDisplayer displayer){
+        public TableDataPresenter(ObservableList<? extends TableDataAdapter> data, TableDataDisplayer displayer){
 
-                model = data;
+                model = (ObservableList<TableDataAdapter>) data;
 
                 this.view = displayer;
+
+                view.addColumns(model.get(0).getTableHeaders());
 
                 this.view.setData(model);
         }
 
+
+
+
         /**
          * This interface is the contract of a model with this presenter
+         *
+         * The model must have a static final
          */
         public interface TableDataAdapter {
 
@@ -37,6 +44,7 @@ public class TableDataPresenter {
         public interface TableDataDisplayer {
 
                 void setData(ObservableList<TableDataAdapter> data);
+                void addColumns(List<String> headers);
         }
 }
 

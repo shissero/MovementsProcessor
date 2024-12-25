@@ -38,9 +38,11 @@
                  GridPane.hgrow="ALWAYS"
                  GridPane.vgrow="ALWAYS">
         <columns>
+            <!--
           <TableColumn fx:id="colDescription" text="Description" />
           <TableColumn fx:id="colDate" text="Date" />
             <TableColumn fx:id="colAmount" text="Amount" />
+            -->
         </columns>
       </TableView>
    </children>

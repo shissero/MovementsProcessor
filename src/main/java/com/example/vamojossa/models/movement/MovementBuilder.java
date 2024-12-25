@@ -1,8 +1,11 @@
 package com.example.vamojossa.models.movement;
 
+import com.example.vamojossa.presenters.TableDataPresenter;
+
+import java.util.List;
 import java.util.Objects;
 
-public class MovementBuilder {
+public class MovementBuilder implements TableDataPresenter.TableDataAdapter {
 
         private String date_info;
         private String time_info;
@@ -37,5 +40,15 @@ public class MovementBuilder {
         @Override
         public int hashCode() {
                 return Objects.hash(date_info, time_info, account, amount, description);
+        }
+
+        @Override
+        public String[] asRow() {
+                return new String[]{this.description, this.date_info, String.valueOf(this.amount)};
+        }
+
+        @Override
+        public List<String> getTableHeaders() {
+                return List.of("Description", "Date", "Amount");
         }
 }
