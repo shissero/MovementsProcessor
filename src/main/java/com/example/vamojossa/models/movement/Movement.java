@@ -10,6 +10,7 @@ import java.time.LocalTime;
 import java.util.List;
 
 // FIXME: organize this code, for Gaga's sake
+// TODO: You don't need SimpleObjectProperties anymore
 public class Movement implements TableDataPresenter.TableDataAdapter {
 
         private final SimpleObjectProperty<LocalDate> date_info = new SimpleObjectProperty<>();
