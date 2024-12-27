@@ -1,15 +1,10 @@
 package com.example.vamojossa.views;
 
-import com.example.vamojossa.presenters.TableDataPresenter;
 import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.value.ObservableValue;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.layout.GridPane;
-import javafx.util.Callback;
 
 import java.util.List;
 
@@ -65,15 +60,7 @@ public class MovementTableView implements TableDataDisplayer {
 
                         column.setCellValueFactory(
 
-                                new Callback<TableColumn.CellDataFeatures<TableDataAdapter, String>, ObservableValue<String>>() {
-
-
-                                        @Override
-                                        public ObservableValue<String> call(TableColumn.CellDataFeatures<TableDataAdapter, String> p) {
-
-                                                return new SimpleStringProperty(p.getValue().asRow()[headers.indexOf(header)]);
-                                        }
-                                }
+                                p -> new SimpleStringProperty(p.getValue().asRow()[headers.indexOf(header)])
                         );
 
                         tableView.getColumns().add(column);
