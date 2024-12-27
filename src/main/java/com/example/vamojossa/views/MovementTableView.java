@@ -17,8 +17,8 @@ import static com.example.vamojossa.presenters.TableDataPresenter.*;
 
 public class MovementTableView implements TableDataDisplayer {
 
-        @FXML
-        private GridPane view_parent;
+        //@FXML
+        //private GridPane view_parent;
 
         @FXML
         private TableView<TableDataAdapter> tableView;
@@ -80,7 +80,7 @@ public class MovementTableView implements TableDataDisplayer {
                 }
         }
 
-        public GridPane getView_parent() {
+        /*public GridPane getView_parent() {
                 return view_parent;
-        }
+        }*/
 }

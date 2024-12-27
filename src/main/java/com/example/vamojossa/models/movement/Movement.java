@@ -9,7 +9,7 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.List;
 
-// TODO: organize this code, for Gaga's sake
+// FIXME: organize this code, for Gaga's sake
 public class Movement implements TableDataPresenter.TableDataAdapter {
 
         private final SimpleObjectProperty<LocalDate> date_info = new SimpleObjectProperty<>();

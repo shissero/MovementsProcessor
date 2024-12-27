@@ -9,6 +9,9 @@ import javafx.collections.ObservableList;
 import java.io.IOException;
 import java.util.List;
 
+
+// TODO: Use some library to verify if the files passed are valid
+// TODO: Maybe you'll have to change the manner you implemented the strategy pattern. Check entry 27/12/2024 of the implementation diary
 /**
  * This class provides an abstraction for getting data from files
  * It implements the Strategy pattern
