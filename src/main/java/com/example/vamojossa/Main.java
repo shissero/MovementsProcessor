@@ -8,6 +8,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -18,20 +19,60 @@ public class Main extends Application {
 
         @Override
         public void start(Stage stage) throws IOException {
+                stage.setTitle("Movements processor");
 
-                ObservableList<? extends TableDataPresenter.TableDataAdapter> all_movements = (new NubankCSVStrategy()).getMovements("src/main/resources/com/example/vamojossa/test_ignore");
+                stage.setScene(
+                        createScene(
+                                loadMainPane()
+                        )
+                );
 
-                FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("movements_table.fxml"));
-
-                Scene scene = new Scene(fxmlLoader.load());
-                scene.getStylesheets().add(Main.class.getResource("movement_table_style.css").toExternalForm());
-
-                TableDataPresenter presenter = new TableDataPresenter(all_movements, fxmlLoader.getController());
-
-                stage.setTitle("Hello!");
-                stage.setScene(scene);
-                stage.setMaximized(true);
                 stage.show();
+        }
+
+        /**
+         * Loads the main fxml layout.
+         * Sets up the vista switching VistaNavigator.
+         * Loads the first vista into the fxml layout.
+         *
+         * @return the loaded pane.
+         * @throws IOException if the pane could not be loaded.
+         */
+        private Pane loadMainPane() throws IOException {
+                FXMLLoader loader = new FXMLLoader();
+
+                Pane mainPane = (Pane) loader.load(
+                        getClass().getResourceAsStream(
+                                "/main.fxml"
+                        )
+                );
+
+                MainController mainController = loader.getController();
+
+                VistaNavigator.setMainController(mainController);
+                //VistaNavigator.loadVista(VistaNavigator.VISTA_1);
+
+                return mainPane;
+        }
+
+        /**
+         * Creates the main application scene.
+         *
+         * @param mainPane the main application layout.
+         *
+         * @return the created scene.
+         */
+        private Scene createScene(Pane mainPane) {
+                Scene scene = new Scene(
+                        mainPane
+                );
+
+                // ME: this will remove all current styles sheets and add vista.css
+                scene.getStylesheets().setAll(
+                        getClass().getResource("vista.css").toExternalForm()
+                );
+
+                return scene;
         }
 
         public static void main(String[] args) {
