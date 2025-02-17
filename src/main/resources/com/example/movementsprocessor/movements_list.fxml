@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<?import javafx.scene.control.Button?>
+<GridPane fx:id="view_parent"
+          style="-fx-background-color: black;"
+          alignment="center"
+          hgap="10"
+          prefHeight="235.0"
+          prefWidth="406.0"
+          vgap="10"
+          xmlns="http://javafx.com/javafx/17.0.6"
+          xmlns:fx="http://javafx.com/fxml/1"
+          fx:controller="com.example.movementsprocessor.controllers.MovementEditorController">
+
+    <padding>
+        <Insets bottom="0" left="0" right="0" top="0" />
+    </padding>
+   <columnConstraints>
+      <ColumnConstraints halignment="CENTER" hgrow="ALWAYS"/>
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+   </rowConstraints>
+   <children>
+       <Button onAction="#fileManager"
+               text="Carregar movimentos de arquivo"
+               GridPane.rowIndex="0"
+               GridPane.rowSpan="1"
+               GridPane.columnIndex="0"
+               GridPane.columnSpan="1"
+       />
+      <TableView fx:id="tableView"
+                 maxWidth="1.7976931348623157E308"
+                 minWidth="-Infinity"
+                 GridPane.rowIndex="1"
+                 GridPane.rowSpan="1"
+                 GridPane.columnIndex="0"
+                 GridPane.columnSpan="1"
+                 GridPane.hgrow="ALWAYS"
+                 GridPane.vgrow="ALWAYS">
+        <columns>
+            <!--
+          <TableColumn fx:id="colDescription" text="Description" />
+          <TableColumn fx:id="colDate" text="Date" />
+            <TableColumn fx:id="colAmount" text="Amount" />
+            -->
+        </columns>
+      </TableView>
+   </children>
+
+</GridPane>
